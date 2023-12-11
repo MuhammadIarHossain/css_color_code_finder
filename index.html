@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Color Code Finder App</title>
+  <link rel="stylesheet" href="colorCodeFinder.css">
+</head>
+<body>
+  <h2>Find Your RGB &amp; Hex Color Code </h2>
+  <main class="colorWrapper">
+    <div class="left_box">
+    <div class="colorInput_bx">
+      <h4 class="r">RED</h4>
+      <input type="number" value="0" id="redInputBx" oninput="numberInput('.red',this.value)">
+    </div>
+    <div class="row">
+      <button class="minus_btn" onclick="decrement('.red')">&minus;</button>
+      <input type="range" class="red" min="0" max="255" value="0" oninput="sliderCode()">
+      <button class="plus_btn" onclick="increment('.red')">&plus;</button>
+    </div>
+    <div class="colorInput_bx">
+      <h4 class="g">GREEN</h4>
+      <input type="number" value="0" id="greenInputBx" oninput="numberInput('.green',this.value)">
+    </div>
+    <div class="row">
+      <button class="minus_btn" onclick="decrement('.green')">&minus;</button>
+      <input type="range" class="green" min="0" max="255" value="0" oninput="sliderCode()">
+      <button class="plus_btn" onclick="increment('.green')">&plus;</button>
+    </div>
+    <div class="colorInput_bx">
+      <h4 class="b">BLUE</h4>
+      <input type="number" value="0" id="blueInputBx" oninput="numberInput('.blue',this.value)">
+    </div>
+    <div class="row">
+      <button class="minus_btn" onclick="decrement('.blue')">&minus;</button>
+      <input type="range" class="blue" min="0" max="255" value="0" oninput="sliderCode()">
+      <button class="plus_btn" onclick="increment('.blue')">&plus;</button>
+     </div>
+    </div>
+    <div class="preview_wrapper">
+      <div class="preview_bx"></div>
+      <div class="inner">
+      <div class="hexacode_bx">
+        <div>
+          <h4 class="txt">HEX CODE</h4>
+          <p class="code">#000000</p>
+        </div>
+        <button class="hex_copybtn" onclick="copyToClip(this)">Copy</button>
+      </div>
+      <div class="rgbcode_bx">
+        <div>
+          <h4 class="txt">RGB CODE</h4>
+          <p class="code">rgb(0,0,0)</p>
+        </div>
+        <button class="rgb_copybtn" onclick="copyToClip(this)">Copy</button>
+      </div>
+      </div>
+    </div>
+    <div class="tost_msg">
+      <p><span class="msg"></span> code copied successfully</p>
+    </div>
+  </main>
+  <script src="colorCodeFinder.js"></script>
+</body>
+</html>
